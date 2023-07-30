@@ -12,6 +12,14 @@ import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import CardContent1 from "./CardContent1";
+import CardContent2 from "./CardContent2";
+import CardContent3 from "./CardContent3";
+import CardContent4 from "./CardContent4";
+import CardContent5 from "./CardContent5";
+import CardContent6 from "./CardContent6";
+import CardContent8 from "./CardContent8";
+import CardContent7 from "./CardContent7";
 
 export default function CustomizeCard() {
   const router = useRouter();
@@ -19,6 +27,10 @@ export default function CustomizeCard() {
   const [genderSelected, setGenderSelected] = useState("");
   const [typeofDressSelected, setTypeofDressSelected] = useState("");
   const [typeofClothing, setTypeofClothing] = useState("");
+  const [typeofTopsSelected, setTypeofTopsSelected] = useState("");
+  const [sleevesSelected, setSleevesSelected] = useState("");
+  const [colorSelected, setColorSelected] = useState("");
+  const [selectSize, setSelectSize] = useState("");
   const genderCheckBox = ["Male", "Female"];
   const typeOfDress = [
     "Casuals",
@@ -28,6 +40,92 @@ export default function CustomizeCard() {
     "Other...",
   ];
   const clothing = ["T-Shirts", "Pants", "Hoodies"];
+  const typeofTops = [
+    "Casuals",
+    "V-Necks",
+    "Round Neck",
+    "Turtle Neck",
+    "Other...",
+  ];
+  const sleeveType = ["Short Sleeve", "Long Sleeve", "Other..."];
+  const colors = ["Black", "White", "Red", "Blue", "Green", "Yellow", "Orange"];
+  const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+  const cards: { id: number; card: JSX.Element }[] = [
+    {
+      id: 1,
+      card: (
+        <CardContent1
+          genderSelected={genderSelected}
+          setGenderSelected={setGenderSelected}
+          genderCheckBox={genderCheckBox}
+        />
+      ),
+    },
+    {
+      id: 2,
+      card: (
+        <CardContent2
+          setTypeofDressSelected={setTypeofDressSelected}
+          typeOfDress={typeOfDress}
+          typeofDressSelected={typeofDressSelected}
+        />
+      ),
+    },
+    {
+      id: 3,
+      card: (
+        <CardContent3
+          clothing={clothing}
+          setTypeofClothing={setTypeofClothing}
+          typeofClothing={typeofClothing}
+        />
+      ),
+    },
+    {
+      id: 4,
+      card: (
+        <CardContent4
+          setTypeofTopsSelected={setTypeofTopsSelected}
+          typeofTops={typeofTops}
+          typeofTopsSelected={typeofTopsSelected}
+        />
+      ),
+    },
+    {
+      id: 5,
+      card: (
+        <CardContent5
+          setSleevesSelected={setSleevesSelected}
+          sleeveType={sleeveType}
+          sleevesSelected={sleevesSelected}
+        />
+      ),
+    },
+    {
+      id: 6,
+      card: (
+        <CardContent6
+          setColorSelected={setColorSelected}
+          colorSelected={colorSelected}
+          colors={colors}
+        />
+      ),
+    },
+    {
+      id: 7,
+      card: <CardContent7 />,
+    },
+    {
+      id: 8,
+      card: (
+        <CardContent8
+          selectSize={selectSize}
+          setSelectSize={setSelectSize}
+          sizes={sizes}
+        />
+      ),
+    },
+  ];
 
   return (
     <>
@@ -38,68 +136,7 @@ export default function CustomizeCard() {
             <span className="rounded-full w-10 h-10 bg-red-400"></span>
           </CardTitle>
         </CardHeader>
-        {/* page 1 */}
-        {page === 1 && (
-          <CardContent className="flex flex-col justify-center space-y-3">
-            <RadioGroup
-              defaultValue={genderSelected}
-              onValueChange={(value) => setGenderSelected(value)}
-            >
-              {genderCheckBox.map((item) => (
-                <div key={item} className="flex items-center space-x-2">
-                  <RadioGroupItem id={item} value={item} />
-                  <Label
-                    htmlFor={item}
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-                  >
-                    {item}
-                  </Label>
-                </div>
-              ))}
-            </RadioGroup>
-          </CardContent>
-        )}
-        {/* page 2 */}
-        {page === 2 && (
-          <CardContent className="flex flex-col justify-center space-y-3">
-            <RadioGroup
-              defaultValue={typeofDressSelected}
-              onValueChange={(value) => setTypeofDressSelected(value)}
-            >
-              {typeOfDress.map((item) => (
-                <div key={item} className="flex items-center space-x-2">
-                  <RadioGroupItem id={item} value={item} />
-                  <Label
-                    htmlFor={item}
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-                  >
-                    {item}
-                  </Label>
-                </div>
-              ))}
-            </RadioGroup>
-          </CardContent>
-        )}
-        {page === 3 && (
-          <CardContent className="flex flex-col justify-center space-y-3">
-            <RadioGroup
-              defaultValue={typeofClothing}
-              onValueChange={(value) => setTypeofClothing(value)}
-            >
-              {clothing.map((item) => (
-                <div key={item} className="flex items-center space-x-2">
-                  <RadioGroupItem id={item} value={item} />
-                  <Label
-                    htmlFor={item}
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-                  >
-                    {item}
-                  </Label>
-                </div>
-              ))}
-            </RadioGroup>
-          </CardContent>
-        )}
+        <>{cards.filter((card) => card.id === page)[0].card}</>
         <CardFooter className="flex justify-between">
           <Button
             variant="outline"
@@ -108,15 +145,25 @@ export default function CustomizeCard() {
                 if (prev === 1) {
                   router.push("/");
                   return 1;
-                } else {
-                  return prev - 1;
                 }
+                return prev - 1;
               })
             }
           >
             Previous
           </Button>
-          <Button onClick={() => setPage((prev) => prev + 1)}>Next</Button>
+          <Button
+            onClick={() =>
+              setPage((prev) => {
+                if (prev === 8) {
+                  return 8;
+                }
+                return prev + 1;
+              })
+            }
+          >
+            Next
+          </Button>
         </CardFooter>
       </Card>
     </>

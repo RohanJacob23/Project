@@ -1,5 +1,6 @@
 "use client";
 
+import ModeToggle from "@/components/ThemeToggle";
 import {
   Card,
   CardDescription,
@@ -12,6 +13,9 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex items-center justify-center h-full px-8">
+      <div className="absolute left-8 top-4">
+        <ModeToggle />
+      </div>
       <Card className="flex flex-col items-center justify-center text-center shadow-lg w-full md:w-1/2 md:h-1/2">
         <CardHeader>
           <CardTitle className="flex flex-col items-center justify-center text-xl md:text-3xl font-semibold space-y-3">
