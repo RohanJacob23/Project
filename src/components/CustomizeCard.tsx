@@ -126,11 +126,22 @@ export default function CustomizeCard() {
       ),
     },
   ];
+  const breadcrumbs = `${
+    genderSelected.length !== 0 ? `${genderSelected} / ` : ""
+  } ${typeofDressSelected.length !== 0 ? `${typeofDressSelected} / ` : ""} ${
+    typeofClothing.length !== 0 ? `${typeofClothing} / ` : ""
+  } ${typeofTopsSelected.length !== 0 ? `${typeofTopsSelected} / ` : ""} ${
+    sleevesSelected.length !== 0 ? `${sleevesSelected} / ` : ""
+  } ${colorSelected}`;
 
   return (
     <>
-      <Card className="shadow-lg w-full md:w-1/2 max-w-md">
-        <CardHeader>
+      <Card className="relative shadow-lg w-full md:w-1/2 max-w-md">
+        {/* breadcrumb */}
+        <div className="absolute top-1.5 left-6 text-xs font-bold dark:text-white/50 text-black/30">
+          {breadcrumbs}
+        </div>
+        <CardHeader className="pt-12 md:pt-8">
           <CardTitle className="flex items-center justify-between text-xl md:text-2xl space-x-2">
             <span>Let&apos;s Custmoize</span>
             <span className="rounded-full w-10 h-10 bg-red-400"></span>
