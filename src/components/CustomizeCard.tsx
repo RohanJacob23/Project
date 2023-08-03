@@ -1,17 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import CardContent1 from "./CardContent1";
 import CardContent2 from "./CardContent2";
 import CardContent3 from "./CardContent3";
@@ -30,14 +22,12 @@ export default function CustomizeCard() {
   const [typeofClothing, setTypeofClothing] = useState("");
   const [typeofTopsSelected, setTypeofTopsSelected] = useState("");
   const [sleevesSelected, setSleevesSelected] = useState("");
-  const [colorSelected, setColorSelected] = useState("");
   const [selectSize, setSelectSize] = useState("");
   const genderCheckBox = ["Male", "Female"];
   const typeOfDress = ["Casuals", "Traditional", "Office Wear", "Party"];
   const clothing = ["T-Shirts", "Pants", "Hoodies"];
   const typeofTops = ["Collar", "V-Necks", "Round Neck", "Turtle Neck"];
   const sleeveType = ["Short Sleeve", "Long Sleeve"];
-  const colors = ["Black", "White", "Red", "Blue", "Green", "Yellow", "Orange"];
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
   const cards: { id: number; card: JSX.Element }[] = [
     {
@@ -92,13 +82,7 @@ export default function CustomizeCard() {
     },
     {
       id: 6,
-      card: (
-        <CardContent6
-          setColorSelected={setColorSelected}
-          colorSelected={colorSelected}
-          colors={colors}
-        />
-      ),
+      card: <CardContent6 />,
     },
     {
       id: 7,
@@ -121,7 +105,7 @@ export default function CustomizeCard() {
     typeofClothing.length !== 0 ? `${typeofClothing} / ` : ""
   } ${typeofTopsSelected.length !== 0 ? `${typeofTopsSelected} / ` : ""} ${
     sleevesSelected.length !== 0 ? `${sleevesSelected} / ` : ""
-  } ${colorSelected}`;
+  } `;
 
   return (
     <>

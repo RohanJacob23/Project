@@ -15,7 +15,9 @@ export default function page() {
     <main className="flex justify-center items-center px-2.5">
       <Card className="relative shadow-lg w-full md:w-1/2 max-w-md">
         <CardHeader>
-          <CardTitle className="text-xl md:text-2xl">Your Product</CardTitle>
+          <CardTitle className="text-xl md:text-2xl">
+            Your Customized Product
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex items-center justify-evenly space-x-4">
