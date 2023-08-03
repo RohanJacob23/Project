@@ -8,7 +8,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { ArrowRightIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 export default function page() {
   const clothesPath = [
@@ -103,6 +104,12 @@ export default function page() {
             );
           })}
         </div>
+        <Link
+          href="/customize"
+          className="flex items-center space-x-2 text-base md:text-xl justify-center mt-5"
+        >
+          Let&apos;s Custmoize <ArrowRightIcon className="md:w-5 md:h-5" />
+        </Link>
       </section>
     </main>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import { CardContent } from "./ui/card";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Label } from "./ui/label";
+import { Input } from "./ui/input";
 
 export default function CardContent5({
   sleevesSelected,
@@ -30,6 +31,10 @@ export default function CardContent5({
           </div>
         ))}
       </RadioGroup>
+      <div className="grid w-full max-w-sm items-center gap-1.5">
+        <Label htmlFor="Other">Other</Label>
+        <Input type="Other" id="Other" placeholder="Enter!!" />
+      </div>
     </CardContent>
   );
 }

@@ -20,6 +20,7 @@ import CardContent5 from "./CardContent5";
 import CardContent6 from "./CardContent6";
 import CardContent8 from "./CardContent8";
 import CardContent7 from "./CardContent7";
+import Image from "next/image";
 
 export default function CustomizeCard() {
   const router = useRouter();
@@ -32,22 +33,10 @@ export default function CustomizeCard() {
   const [colorSelected, setColorSelected] = useState("");
   const [selectSize, setSelectSize] = useState("");
   const genderCheckBox = ["Male", "Female"];
-  const typeOfDress = [
-    "Casuals",
-    "Traditional",
-    "Office Wear",
-    "Party",
-    "Other...",
-  ];
+  const typeOfDress = ["Casuals", "Traditional", "Office Wear", "Party"];
   const clothing = ["T-Shirts", "Pants", "Hoodies"];
-  const typeofTops = [
-    "Casuals",
-    "V-Necks",
-    "Round Neck",
-    "Turtle Neck",
-    "Other...",
-  ];
-  const sleeveType = ["Short Sleeve", "Long Sleeve", "Other..."];
+  const typeofTops = ["Casuals", "V-Necks", "Round Neck", "Turtle Neck"];
+  const sleeveType = ["Short Sleeve", "Long Sleeve"];
   const colors = ["Black", "White", "Red", "Blue", "Green", "Yellow", "Orange"];
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
   const cards: { id: number; card: JSX.Element }[] = [
@@ -144,7 +133,15 @@ export default function CustomizeCard() {
         <CardHeader className="pt-12 md:pt-8">
           <CardTitle className="flex items-center justify-between text-xl md:text-2xl space-x-2">
             <span>Let&apos;s Custmoize</span>
-            <span className="rounded-full w-10 h-10 bg-red-400"></span>
+            <span className="relative w-12 md:w-16 h-12 md:h-16">
+              {" "}
+              <Image
+                src="/logo/logo.jpeg"
+                fill
+                alt="logo"
+                className="rounded-full"
+              />
+            </span>
           </CardTitle>
         </CardHeader>
         <>{cards.filter((card) => card.id === page)[0].card}</>
@@ -167,6 +164,7 @@ export default function CustomizeCard() {
             onClick={() =>
               setPage((prev) => {
                 if (prev === 8) {
+                  router.push("/order");
                   return 8;
                 }
                 return prev + 1;
