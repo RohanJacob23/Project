@@ -85,4 +85,7 @@
     -webkit-tap-highlight-color: transparent;
     background-image: url("/background/bg.png");
   }
+  .colorP .react-colorful {
+    height: 180px;
+  }
 }

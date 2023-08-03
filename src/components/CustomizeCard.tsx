@@ -35,7 +35,7 @@ export default function CustomizeCard() {
   const genderCheckBox = ["Male", "Female"];
   const typeOfDress = ["Casuals", "Traditional", "Office Wear", "Party"];
   const clothing = ["T-Shirts", "Pants", "Hoodies"];
-  const typeofTops = ["Casuals", "V-Necks", "Round Neck", "Turtle Neck"];
+  const typeofTops = ["Collar", "V-Necks", "Round Neck", "Turtle Neck"];
   const sleeveType = ["Short Sleeve", "Long Sleeve"];
   const colors = ["Black", "White", "Red", "Blue", "Green", "Yellow", "Orange"];
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
