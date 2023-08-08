@@ -9,6 +9,9 @@ import {
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import ProductPrice from "@/components/ProductPrice";
 
 export default function page() {
   return (
@@ -38,9 +41,7 @@ export default function page() {
               />
             </div>
           </div>
-          <h1 className="font-semibold text-2xl text-center mt-6">
-            Price: 499
-          </h1>
+          <ProductPrice />
         </CardContent>
         <CardFooter className="flex space-x-3">
           <Button variant="outline">Add to cart</Button>

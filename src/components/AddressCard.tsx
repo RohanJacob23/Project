@@ -32,11 +32,6 @@ export default function AddressCard() {
             <Textarea placeholder="Type your address here." id="address" />
           </div>
 
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="promoCode">Promo Code</Label>
-            <Input type="promoCode" id="promoCode" placeholder="promoCode" />
-          </div>
-
           <RadioGroup defaultValue="upi">
             <h1 className="text-xl font-semibold">Mode of Payment</h1>
             <div className="flex items-center space-x-2">
