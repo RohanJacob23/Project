@@ -6,7 +6,6 @@ import Link from "next/link";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -132,7 +131,7 @@ export default function page() {
           href="/customize"
           className="flex items-center space-x-2 text-base md:text-xl justify-center mt-5"
         >
-          Let&apos;s Custmoize <ArrowRightIcon className="md:w-5 md:h-5" />
+          Let&apos;s Design <ArrowRightIcon className="md:w-5 md:h-5" />
         </Link>
       </section>
     </main>

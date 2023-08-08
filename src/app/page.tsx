@@ -35,7 +35,7 @@ export default function page() {
               href="/main"
               className="flex items-center space-x-2 text-base md:text-xl"
             >
-              Let&apos;s Custmoize <ArrowRightIcon className="md:w-5 md:h-5" />
+              Let&apos;s Design <ArrowRightIcon className="md:w-5 md:h-5" />
             </Link>
           </CardDescription>
         </CardHeader>

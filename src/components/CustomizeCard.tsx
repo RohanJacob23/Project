@@ -116,7 +116,7 @@ export default function CustomizeCard() {
         </div>
         <CardHeader className="pt-12 md:pt-8">
           <CardTitle className="flex items-center justify-between text-xl md:text-2xl space-x-2">
-            <span>Let&apos;s Custmoize</span>
+            <span>Let&apos;s Design</span>
             <span className="relative w-12 md:w-16 h-12 md:h-16">
               {" "}
               <Image
