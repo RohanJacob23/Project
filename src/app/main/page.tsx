@@ -11,6 +11,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 export default function page() {
   const clothesPath = [
@@ -107,6 +109,12 @@ export default function page() {
               <DialogTitle>Suggestion!!</DialogTitle>
             </DialogHeader>
             <div className="bg-white mt-5 rounded-lg">
+              <Input
+                type="search"
+                id="search"
+                placeholder="Search"
+                className="mb-4"
+              />
               <div className="grid grid-cols-2 md:grid-cols-3 justify-items-center items-center gap-4">
                 {clothesPath.map((item) => {
                   return (
